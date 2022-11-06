@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Prompt:ital,wght@1,300;1,400&family=Quicksand:wght@300;400;600&display=swap');
+
+/* estilo do reader */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+:root{
+    --primary: #EC9B69;
+    --dark: #313131;
+    --white: #FFFFFF;
+    --grey: #F8F8F8;
+    --silver: #808080;
+}
+
+body{
+    background-color: var(--grey);
+}
+
+.header{
+   background-color: var(--white);
+   display: flex;
+   width: 100%;
+   height: 66px;
+   justify-content: space-between;
+   align-items: center;
+   padding: 13px;
+}
+
+#logo{
+    width: 207px;
+}
+
+.search{
+  border: 1px solid var(--dark);
+  border-radius: 8px;
+  width: 403px;
+  height: 42px;
+  display: flex;
+  margin-right: 56px;
+  justify-content: space-between;
+  padding: 12px 11px;
+}
+
+.search-input{
+   border: none;
+   outline: none;
+   width: 351px;
+}
+
+.search-button{
+    width: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+/* estilo principal */
+
+main{
+    display: flex;
+    padding-bottom: 40px;
+}
+
+#main-content{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 40px;
+}
+
+.card{
+    margin: 3% auto;
+    width: 250px;
+}
+
+.profile-img{
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.profile-title{
+   color: var(--primary); 
+   font-weight: 700;
+   font-size: 32px;
+   margin-top: 5px;
+}
+
+.profile-subtitle{
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.profile-description{
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.profile-infos{
+    display: flex;
+    margin-top: 10px;
+    /* gap: 10px; */
+}
+
+.info-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 4px;
+    width: 66px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 8px;
+}
+
+.info-box:hover{
+    transform: scale(1.2);
+   background-color: var(--white); 
+}
+
+.info-box:last-child{
+    margin-left: 10px;
+}
+
+/* cardes seguidores */
+
+.followers-list{
+    padding: 30px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.followersss{
+    width: 100px;
+    text-align: center;
+}
+
+.followersss:hover{
+    transform: scale(1.2);
+    background-color: var(--white);
+}
+
+.followers-title{
+    font-size: 14px;
+    word-break: break-all;
+    color: var(--primary);
+
+}
+
+.followers-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* cards repositorios */
+.link-repositorio, .link-followers{
+    cursor: pointer;
+}
+
+.link-repositorio:hover{
+    transform: scale(1.2);
+   background-color: var(--white);
+}
+
+.repositores-List{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 70%;
+    gap: 32px;
+    margin: 50px;
+}
+
+
+.repository{
+   width: 440px;
+   height: 140px;
+   background-color: var(--white);
+   padding: 20px;
+   border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   cursor: pointer;
+}
+
+.repository:hover{
+    transform: scale(1.1);
+   background-color: var(--white);
+}
+
+.repository-title{
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.repository-description{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--silver);
+}
+
+.repository-details{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repository-text{
+    font-size: 10px; 
+    color: var(--silver);
+}
+
+.repository-icon{
+    font-size: 12px; 
+    color: var(--silver);
+    display: flex;
+    width: 28px;
+    justify-content: space-between;
+}
+
+.not-foud-reposirore{
+    margin: 0 auto;
+    align-self: center;
+}
+
+
+/* estilo p/ nem um usuario encontado */
+
+.not-foud{
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.not-foud-title{
+    color: var(--primary); 
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.not-foud-subtitulo{
+    color: var(--silver);
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 2px; 
+}
+
+
+/* estilo footer */
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: var(--dark);
+    background-color: var(--white);
+    /* margin-top: 20px; */
+}
+
+.footer p{
+    font-size: 14px;
+}
+
+.footer-destaque{
+    font-weight: 700;
+    color: var(--primary);
+    
+}
