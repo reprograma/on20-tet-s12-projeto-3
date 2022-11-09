@@ -2,12 +2,18 @@ const main = document.getElementById('main-content');
 const input = document.querySelector('.search-input');
 const button = document.querySelector('.search-button');
 
-
 button.addEventListener("click", (event) => {
   event.preventDefault()
   const username = input.value.trim()
   username ? getGitHubUser(username) : alert("Digite uma usuária válida!")
   input.value = ""
+})
+
+const chk = document.getElementById("chk");
+
+chk.addEventListener("change",() => {
+  console.log('está funcionando');
+  document.body.classList.toggle("dark")
 })
 
 getGitHubUser = async (username) => {
@@ -79,15 +85,7 @@ createRepositoriesCards = (repositories) => {
   repositoriesList.setAttribute('id', 'repositories-list')
   main.appendChild(repositoriesList) 
 
-  // SOLUÇÃO DO BUG QUE PERMITE ATUALIZAR O CONTEÚDO DOS REPOSITÓRIOS: 
-  // let repositoriesList = document.getElementById('repositories-list')
-  // if(!repositoriesList) {
-  //   repositoriesList = document.createElement('div') 
-  //   repositoriesList.setAttribute('id', 'repositories-list')
-  //   main.appendChild(repositoriesList)
-  // } else {
-  //   repositoriesList.innerHTML = ""
-  // }
+  
 
   repositories.forEach((repository) => {
     const { name, description, language, stargazers_count } = repository
@@ -118,12 +116,3 @@ renderUserNotFound = () => {
     </div>
   `
 }
-
-// let botaoDark = input.botaoDark;
-// function toggleDarkMode() { if (document.body.classList.contains('dark-mode')) 
-// { document.body.classList.remove('dark-mode');
-//  } else { document.body.classList.add('dark-mode'); 
-// } }
- 
-
-
