@@ -1,6 +1,12 @@
 const main = document.getElementById('main-content');
 const input = document.querySelector('.search-input');
 const button = document.querySelector('.search-button');
+const themeButton = document.getElementById('button-theme');
+
+themeButton.addEventListener('click', (event) => {
+  event.preventDefault()
+  document.body.classList.toggle("dark-theme");
+})
 
 button.addEventListener("click", (event) => {
   event.preventDefault()
@@ -19,8 +25,8 @@ getGitHubUser = async (username) => {
       createCard(userData)
     }
   }
-  catch(err) {
-    console.error("Capturei um erro: ",err)
+  catch (err) {
+    console.error("Capturei um erro: ", err)
   }
 }
 
@@ -47,12 +53,12 @@ createCard = (user) => {
     </div>
   `
   const linkRepositories = document.querySelector('.link-repositories')
-  
+
   linkRepositories.addEventListener('click', clickLink = (event) => {
     event.preventDefault()
-    getRepositories(login) 
+    getRepositories(login)
     // SOLUÇÃO DO BUG QUE IMPEDE DE REALIZAR A REQUISIÇÃO NOVAMENTE 
-    linkRepositories.removeEventListener('click', clickLink) 
+    linkRepositories.removeEventListener('click', clickLink)
   })
 }
 
@@ -61,22 +67,22 @@ getRepositories = async (username) => {
     // sugestão extra - verificar conteúdo do innerHTML da repositoriesList antes do fetch()
     const response = await fetch(`https://api.github.com/users/${username}/repos`)
     const repositories = await response.json()
-    if(repositories.length > 0) {
+    if (repositories.length > 0) {
       createRepositoriesCards(repositories)
     } else {
       renderNotFoundRepositories(username)
     }
   }
-  catch(err) {
-    console.error("Capturei um erro: ",err)
+  catch (err) {
+    console.error("Capturei um erro: ", err)
   }
 }
 
-createRepositoriesCards = (repositories) => { 
+createRepositoriesCards = (repositories) => {
 
   const repositoriesList = document.createElement('div')
   repositoriesList.setAttribute('id', 'repositories-list')
-  main.appendChild(repositoriesList) 
+  main.appendChild(repositoriesList)
 
   // SOLUÇÃO DO BUG QUE PERMITE ATUALIZAR O CONTEÚDO DOS REPOSITÓRIOS: 
   // let repositoriesList = document.getElementById('repositories-list')

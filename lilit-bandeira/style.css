@@ -13,6 +13,7 @@
   --white: #ffff;
   --silver: #7f8c8d;
   --grey: #f8f8f8;
+  --lightdark: #444;
 }
 
 body {
@@ -225,7 +226,7 @@ body {
 
 /* footer */
 
-.footer {
+/* .footer {
   width: 100%;
   height: 66px;
   display: none;
@@ -244,4 +245,36 @@ body {
 .text-highlight {
   font-weight: 700;
   color: var(--primary);
+} */
+
+/* Dark theme */
+.button-theme{
+  background-color: transparent;
+  border: none;
+}
+
+.button-theme img{
+  width: 25px;
+}
+
+.dark-theme {
+  background-color: var(--dark);
+  color: var(--white);
+}
+.dark-theme .header{
+  background-color: var(--lightdark);
+  color: var(--white);
+}
+
+.dark-theme .search-button{
+  background-color: var(--lightdark);
+}
+
+.dark-theme .search-input, .dark-theme .info-box, .dark-theme .repository{
+  background-color: var(--lightdark);
+  color: var(--white);
+}
+
+.dark-theme .profile-subtitle{
+  color: var(--white);
 }
